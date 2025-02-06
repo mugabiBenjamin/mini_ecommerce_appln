@@ -1,0 +1,60 @@
+# Miscellaneous files  
+*.class  
+*.log  
+*.pyc  
+*.swp  
+.DS_Store  
+
+# Editor and IDE files  
+# IntelliJ related  
+*.iml  
+*.ipr  
+*.iws  
+.idea/  
+
+# Visual Studio Code settings (uncomment if you want to include it)  
+#.vscode/  
+
+# Atom editor files  
+.atom/  
+# Your custom Atom settings can also be added if necessary  
+
+# Flutter/Dart/Pub related  
+**/doc/api/  
+**/ios/Flutter/.last_build_id  
+.dart_tool/  
+.flutter-plugins  
+.flutter-plugins-dependencies  
+.pub-cache/  
+.pub/  
+/build/  
+# Add this for additional build folders (if applicable)  
+android/app/debug/  
+android/app/profile/  
+android/app/release/  
+**/build/  
+
+# iOS build products  
+ios/Flutter/Flutter.framework  
+
+# Removed because it can contain some relevant files  
+#.packages  
+# Uncomment to ignore, but .packages might be useful in certain workflows  
+
+# Symbolication related  
+app.*.symbols  
+
+# Obfuscation related  
+app.*.map.json  
+
+# Migration working directory  
+migrate_working_dir/  
+
+# Objective-C & Swift generated files (if applicable)  
+*.dSYM  
+*.xcuserdatad  
+
+# Others (like Python)  
+*.pyc  
+
+# Any required additional custom ignores can be added below this line
