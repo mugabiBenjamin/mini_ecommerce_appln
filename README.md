@@ -118,30 +118,26 @@ flutter test
 ```
 
 ### 🧪Testing
-1. Fork the repository:
 
+1. Fork the repository:
 2. Clone your forked repository:
     ```bash
     git clone https://github.com/<your-username>/mini_ecommerce_appln.git
     cd mini_ecommerce_appln
     ```
-
 3. Create a new branch for your feature or bugfix:
     ```bash
     git checkout -b feature/<feature-name>
     ```
-
 4. Make your changes and commit them:
     ```bash
     git add .
     git commit -m "Add detailed description of your changes"
     ```
-
 5. Push your changes to your forked repository:
     ```bash
     git push origin feature/<feature-name>
     ```
-
 6. Create a pull request:
 
 ## 🐛Issues  
@@ -149,6 +145,10 @@ flutter test
 If you encounter any issues while using this project, create an issue [here](https://github.com/mugabiBenjamin/mini_ecommerce_appln/issues)
 
 ## 🙏Acknowledgment
-Special thanks to the Flutter community and all contributors who have helped improve this project.
+
+- [Flutter](https://flutter.dev/): UI toolkit for building natively compiled applications.  
+- [Dart](https://dart.dev/): Programming language used for Flutter development.  
+- [Firebase](https://firebase.google.com/): Backend services for authentication, database, and hosting.  
+- [Android Studio](https://developer.android.com/studio)/[Xcode](https://developer.apple.com/xcode/): Development environments for mobile applications.
 
 [Back to Top](#mini-e-commerce-application)
