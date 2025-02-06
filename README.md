@@ -13,9 +13,8 @@
     - [Branching Strategy](#branching-strategy)
     - [Code Style](#code-style)
     - [Testing](#testing)
-7. [License](#license)
-8. [Contact](#contact)
-9. [Acknowledgment](#acknowledgment)
+7. [Issues](#issues)
+8. [Acknowledgment](#acknowledgment)
 
 ## 📖Overview
 
