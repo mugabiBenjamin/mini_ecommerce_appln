@@ -143,14 +143,6 @@ flutter test
     ```
 
 6. Create a pull request:
-    Go to the original repository and click the "New Pull Request" button. Select your branch and submit the pull request for review.
-
-## 📄License
-This project is licensed under the MIT License.
-
-## 📞Contact
-Maintainer: 
-- [mugabiBenjamin](https://github.com/mugabiBenjamin)
 
 ## 🐛Issues  
 
