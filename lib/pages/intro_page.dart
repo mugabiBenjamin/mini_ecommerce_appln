@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_ecommerce_appln/pages/home_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -22,18 +23,20 @@ class IntroPage extends StatelessWidget {
                   ),
                   child: Image.asset(
                     'assets/img/LogoUA.png',
-                    width: 200.0,
+                    width: 220.0,
                   ),
                 ),
               ),
-              SizedBox(height: 10.0),
+              SizedBox(height: 15.0),
 
               // Text
-              Text('SHOES',
+              Text('SNEAKERS AND KICKS',
                   style: TextStyle(
-                    fontSize: 24.0,
+                    fontSize: 18.0,
                     color: Colors.blue[900],
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2.0,
+                    fontFamily: 'MyBebasNeue',
                   )),
               const SizedBox(height: 50.0),
 
@@ -50,27 +53,35 @@ class IntroPage extends StatelessWidget {
               const SizedBox(height: 100.0),
 
               // Button
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.blue[900],
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      padding: EdgeInsets.symmetric(vertical: 12.0),
-                      child: Text(
-                        'Shop Now',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.blue[900],
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
-                        textAlign: TextAlign.center,
+                        padding: EdgeInsets.symmetric(vertical: 12.0),
+                        child: Text(
+                          'SHOP NOW',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.0,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
