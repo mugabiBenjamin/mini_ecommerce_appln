@@ -5,10 +5,9 @@ import 'package:mini_ecommerce_appln/models/shoe.dart';
 import 'package:provider/provider.dart';
 
 class ShopPage extends StatelessWidget {
-  // final Shoe shoe;
-  const ShopPage({super.key}); // removed required this.shoe
+  const ShopPage({super.key});
 
-  // Addd shoe to cart
+  // Add shoe to cart
   void addToCart(BuildContext context, Shoe shoe) {
     Provider.of<Cart>(context, listen: false).addItemToCart(shoe);
 
@@ -17,113 +16,146 @@ class ShopPage extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          'Successfully added to cart',
+          'Successfully Added to Cart',
           style: TextStyle(
             color: Colors.blue.shade900,
             fontWeight: FontWeight.bold,
             fontSize: 18.0,
           ),
         ),
-        content: Text(
-          'Check your cart',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+        content: const Text(
+          'Check your cart to proceed with checkout.',
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(
+              'OK',
+              style: TextStyle(color: Colors.blue.shade900),
+            ),
+          ),
+        ],
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<Cart>(
+    return SafeArea(
+      child: Consumer<Cart>(
         builder: (context, value, child) => Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(12.0),
-                  margin: const EdgeInsets.symmetric(horizontal: 20.0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8.0),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Search bar with improved styling
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withAlpha((0.05 * 255).toInt()),
+                    blurRadius: 5.0,
+                    spreadRadius: 2.0,
+                    offset: const Offset(0, 2),
                   ),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Search',
-                          style: TextStyle(
-                            color: Colors.grey.shade700,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Icon(
-                          Icons.search,
-                          color: Colors.grey.shade700,
-                        ),
-                      ]),
-                ),
-
-                // message
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20.0),
-                  child: Text(
-                    'The Only Way Is Through',
-                    style: TextStyle(
-                      color: Colors.grey.shade600,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12.0,
+                ],
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Search shoes...',
+                        border: InputBorder.none,
+                        hintStyle: TextStyle(color: Colors.grey.shade700),
+                      ),
                     ),
                   ),
-                ),
+                  Icon(
+                    Icons.search,
+                    color: Colors.grey.shade700,
+                  ),
+                ],
+              ),
+            ),
 
-                // hot picks
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text('Hot pics🔥',
-                          style: TextStyle(
-                              color: Colors.grey.shade700,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0)),
-                      Text('See all',
-                          style: TextStyle(
-                            color: Colors.blue.shade900,
-                            fontWeight: FontWeight.bold,
-                          ))
-                    ],
+            // Motivational message
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15.0),
+              child: Center(
+                child: Text(
+                  'The Only Way Is Through',
+                  style: TextStyle(
+                    color: Colors.grey.shade600,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14.0,
                   ),
                 ),
+              ),
+            ),
 
-                const SizedBox(height: 20.0),
-
-                // List of shoes for sale
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: value.getShoeList().length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      // Create a shoe
-                      Shoe shoe = value.getShoeList()[index];
-
-                      return ShoeTile(
-                        shoe: shoe,
-                        onTap: () => addToCart(context, shoe),
-                      );
+            // Hot Picks Section
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Hot Picks🔥',
+                    style: TextStyle(
+                      color: Colors.grey.shade700,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // Future functionality for "See All"
                     },
+                    child: Text(
+                      'See All',
+                      style: TextStyle(
+                        color: Colors.blue.shade900,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                ),
+                ],
+              ),
+            ),
 
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 25.0, left: 25.0, right: 25.0),
-                  child: Divider(
-                    color: Colors.white,
-                  ),
-                )
-              ],
-            ));
+            const SizedBox(height: 20.0),
+
+            // List of shoes for sale
+            SizedBox(
+              height: 310.0, // Ensures consistent height for the list
+              child: ListView.builder(
+                itemCount: value.getShoeList().length,
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                itemBuilder: (context, index) {
+                  // Create a shoe
+                  Shoe shoe = value.getShoeList()[index];
+
+                  return ShoeTile(
+                    shoe: shoe,
+                    onTap: () => addToCart(context, shoe),
+                  );
+                },
+              ),
+            ),
+
+            // Divider for separation
+            const Padding(
+              padding: EdgeInsets.only(top: 20.0),
+              child: Divider(thickness: 1, color: Colors.grey),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

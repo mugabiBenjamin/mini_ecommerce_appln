@@ -47,6 +47,6 @@ class CartPage extends StatelessWidget {
 
 extension on Cart {
   List<Shoe> getUserCart() {
-    return useCart;
+    return userCart;
   }
 }
