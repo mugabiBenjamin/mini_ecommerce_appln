@@ -127,11 +127,11 @@ class ShopPage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 16.0),
 
             // List of shoes for sale
             SizedBox(
-              height: 310.0, // Ensures consistent height for the list
+              height: 300.0, // Ensures consistent height for the list
               child: ListView.builder(
                 itemCount: value.getShoeList().length,
                 scrollDirection: Axis.horizontal,

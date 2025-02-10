@@ -1,3 +1,167 @@
+// import 'package:flutter/material.dart';
+// import 'package:mini_ecommerce_appln/components/bottom_nav_bar.dart';
+// import 'package:mini_ecommerce_appln/pages/shop_page.dart';
+// import 'package:mini_ecommerce_appln/pages/cart_page.dart';
+
+// class HomePage extends StatefulWidget {
+//   const HomePage({super.key});
+
+//   @override
+//   State<HomePage> createState() => _HomePageState();
+// }
+
+// class _HomePageState extends State<HomePage> {
+// // Selected index of the bottom navigation bar
+//   int _selectedIndex = 0;
+
+// // Update selected index
+//   void _navigateBottomBar(int? index) {
+//     setState(() {
+//       _selectedIndex = index ?? 0;
+//     });
+//   }
+
+// // pages to display
+//   final List<Widget> _pages = [const ShopPage(), const CartPage()];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.grey[200],
+//       bottomNavigationBar: BottomNavBar(
+//         onTabChange: _navigateBottomBar,
+//       ),
+//       appBar: AppBar(
+//         backgroundColor: Colors.transparent,
+//         leading: Builder(builder: (context) {
+//           return IconButton(
+//             icon: Icon(
+//               Icons.menu,
+//               color: Colors.blue.shade900,
+//             ),
+//             onPressed: () {
+//               Scaffold.of(context).openDrawer();
+//             },
+//           );
+//         }),
+//       ),
+//       drawer: Drawer(
+//         backgroundColor: Colors.blue.shade900,
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//           children: [
+//             // other pages
+//             Column(
+//               children: [
+//                 DrawerHeader(
+//                     // Logo
+//                     child: Image.asset(
+//                   'assets/img/LogoUA.png',
+//                   color: Colors.white,
+//                   width: 100.0,
+//                 )),
+//                 const Padding(
+//                   padding: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
+//                   child: ListTile(
+//                     leading: Icon(
+//                       Icons.home,
+//                       color: Colors.white,
+//                     ),
+//                     title: Text(
+//                       'Home',
+//                       style: TextStyle(
+//                           color: Colors.white, fontWeight: FontWeight.bold),
+//                     ),
+//                   ),
+//                 ),
+//                 const Padding(
+//                   padding: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
+//                   child: ListTile(
+//                     leading: Icon(
+//                       Icons.shopping_bag_rounded,
+//                       color: Colors.white,
+//                     ),
+//                     title: Text(
+//                       'Cart',
+//                       style: TextStyle(
+//                           color: Colors.white, fontWeight: FontWeight.bold),
+//                     ),
+//                   ),
+//                 ),
+//                 const Padding(
+//                   padding: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
+//                   child: ListTile(
+//                     leading: Icon(
+//                       Icons.money,
+//                       color: Colors.white,
+//                     ),
+//                     title: Text(
+//                       'Payment Method',
+//                       style: TextStyle(
+//                           color: Colors.white, fontWeight: FontWeight.bold),
+//                     ),
+//                   ),
+//                 ),
+//                 const Padding(
+//                   padding: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
+//                   child: ListTile(
+//                     leading: Icon(
+//                       Icons.favorite,
+//                       color: Colors.white,
+//                     ),
+//                     title: Text(
+//                       'Saved',
+//                       style: TextStyle(
+//                           color: Colors.white, fontWeight: FontWeight.bold),
+//                     ),
+//                   ),
+//                 ),
+//                 const Padding(
+//                   padding: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
+//                   child: ListTile(
+//                     leading: Icon(
+//                       Icons.info,
+//                       color: Colors.white,
+//                     ),
+//                     title: Text(
+//                       'About',
+//                       style: TextStyle(
+//                           color: Colors.white, fontWeight: FontWeight.bold),
+//                     ),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//             Padding(
+//               padding: const EdgeInsets.only(
+//                   left: 10.0, top: 10.0, right: 10.0, bottom: 20.0),
+//               child: Container(
+//                 decoration: BoxDecoration(
+//                   color: Colors.red,
+//                   borderRadius: BorderRadius.circular(8.0),
+//                 ),
+//                 child: ListTile(
+//                   leading: Icon(
+//                     Icons.logout,
+//                     color: Colors.white,
+//                   ),
+//                   title: Text(
+//                     'Logout',
+//                     style: TextStyle(
+//                         color: Colors.white, fontWeight: FontWeight.bold),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//       body: _pages[_selectedIndex],
+//     );
+//   }
+// }
+
+
 import 'package:flutter/material.dart';
 import 'package:mini_ecommerce_appln/components/bottom_nav_bar.dart';
 import 'package:mini_ecommerce_appln/pages/shop_page.dart';
@@ -11,17 +175,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-// Selected index of the bottom navigation bar
+  // Selected index of the bottom navigation bar
   int _selectedIndex = 0;
 
-// Update selected index
+  // Update selected index
   void _navigateBottomBar(int? index) {
     setState(() {
-      _selectedIndex = index ?? 0;
+      _selectedIndex = index!;
     });
   }
 
-// pages to display
+  // Pages to display
   final List<Widget> _pages = [const ShopPage(), const CartPage()];
 
   @override
@@ -33,123 +197,90 @@ class _HomePageState extends State<HomePage> {
       ),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        leading: Builder(builder: (context) {
-          return IconButton(
-            icon: Icon(
-              Icons.menu,
-              color: Colors.blue.shade900,
-            ),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          );
-        }),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: Icon(Icons.menu, color: Colors.blue.shade900),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            );
+          },
+        ),
       ),
       drawer: Drawer(
         backgroundColor: Colors.blue.shade900,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // other pages
             Column(
               children: [
                 DrawerHeader(
-                    // Logo
-                    child: Image.asset(
-                  'assets/img/LogoUA.png',
-                  color: Colors.white,
-                  width: 100.0,
-                )),
-                const Padding(
-                  padding: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.home,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'Home',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
+                  child: Image.asset(
+                    'assets/img/LogoUA.png',
+                    color: Colors.white,
+                    width: 100.0,
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.shopping_bag_rounded,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'Cart',
+                ListTile(
+                  leading: const Icon(Icons.home, color: Colors.white),
+                  title: const Text('Home',
                       style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                          color: Colors.white, fontWeight: FontWeight.bold)),
+                  onTap: () {
+                    setState(() {
+                      _selectedIndex = 0;
+                    });
+                    Navigator.pop(context);
+                  },
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.money,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'Payment Method',
+                ListTile(
+                  leading:
+                      const Icon(Icons.shopping_bag_rounded, color: Colors.white),
+                  title: const Text('Cart',
                       style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                          color: Colors.white, fontWeight: FontWeight.bold)),
+                  onTap: () {
+                    setState(() {
+                      _selectedIndex = 1;
+                    });
+                    Navigator.pop(context);
+                  },
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.favorite,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'Saved',
+                ListTile(
+                  leading: const Icon(Icons.money, color: Colors.white),
+                  title: const Text('Payment Method',
                       style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                          color: Colors.white, fontWeight: FontWeight.bold)),
+                  onTap: () {},
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.info,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'About',
+                ListTile(
+                  leading: const Icon(Icons.favorite, color: Colors.white),
+                  title: const Text('Saved',
                       style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                          color: Colors.white, fontWeight: FontWeight.bold)),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: const Icon(Icons.info, color: Colors.white),
+                  title: const Text('About',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold)),
+                  onTap: () {},
                 ),
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                  left: 10.0, top: 10.0, right: 10.0, bottom: 20.0),
+              padding: const EdgeInsets.only(bottom: 20.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.red,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: ListTile(
-                  leading: Icon(
-                    Icons.logout,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    'Logout',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
+                  leading: const Icon(Icons.logout, color: Colors.white),
+                  title: const Text('Logout',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold)),
+                  onTap: () {},
                 ),
               ),
             ),
