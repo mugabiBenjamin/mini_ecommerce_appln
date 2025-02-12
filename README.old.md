@@ -3,7 +3,6 @@
 flutter create mini_ecommerce_appln
 cd mini_ecommerce_appln
 
-
 # Initialize a new git repository
 git init
 
