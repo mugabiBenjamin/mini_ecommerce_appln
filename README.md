@@ -79,9 +79,10 @@ Ensure you have the following installed:
     ```
 
 For Web:
-    ```bash
-    flutter run -d chrome
-    ``` 
+
+```bash
+flutter run -d chrome
+``` 
 
 ## 🔧Configuration
 
