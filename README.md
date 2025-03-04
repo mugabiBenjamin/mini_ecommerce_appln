@@ -151,4 +151,4 @@ If you encounter any issues while using this project, create an issue [here](htt
 - [Firebase](https://firebase.google.com/): Backend services for authentication, database, and hosting.  
 - [Android Studio](https://developer.android.com/studio)/[Xcode](https://developer.apple.com/xcode/): Development environments for mobile applications.
 
-[🔝Back to Top](#mini-e-commerce-application)
+[🔝 Back to Top](#mini-e-commerce-application)
