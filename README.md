@@ -29,9 +29,9 @@ This is a cross-platform e-commerce application built using Flutter. It supports
 - 🔥 Firebase integration (optional)
 - 📱 Responsive UI for different screen sizes
 
-##  📁Project Structure
+## 📁Project Structure
 
-```
+```plaintext
 mini_ecommerce_appln/
 ├── lib/                        # Main application code
 │   ├── main.dart               # Entry point of the app
@@ -55,6 +55,7 @@ mini_ecommerce_appln/
 ### ✅Prerequisites
 
 Ensure you have the following installed:
+
 - [Flutter SDK](https://flutter.dev/docs/get-started/install)
 - [Dart SDK](https://dart.dev/get-dart)
 - [Android Studio](https://developer.android.com/studio) / [Xcode](https://developer.apple.com/xcode/) (for mobile development)
@@ -63,32 +64,36 @@ Ensure you have the following installed:
 ### 📦Installation
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/mugabiBenjamin/mini_ecommerce_appln.git
-    cd mini_ecommerce_appln
-    ```
+
+   ```bash
+   git clone https://github.com/mugabiBenjamin/mini_ecommerce_appln.git
+   cd mini_ecommerce_appln
+   ```
 
 2. Install dependencies:
-    ```bash
-    flutter pub get
-    ```
+
+   ```bash
+   flutter pub get
+   ```
 
 3. Run the application:
-    ```bash
-    flutter run
-    ```
+
+   ```bash
+   flutter run
+   ```
 
 For Web:
 
 ```bash
 flutter run -d chrome
-``` 
+```
 
 ## 🔧Configuration
 
 ### 🔥Firebase Setup (Optional)
 
 If you want to use Firebase features, configure Firebase:
+
 1. Create a Firebase project in the [Firebase Console](https://console.firebase.google.com/)
 2. Download `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) and place them in `android/app/` and `ios/Runner/` respectively.
 3. Enable Firebase services in `pubspec.yaml` by uncommenting dependencies:
@@ -102,17 +107,21 @@ If you want to use Firebase features, configure Firebase:
 ## 🤝Development & Contribution
 
 ### 🌿Branching Strategy
+
 - `main:` Stable production-ready code
 - `dev:` Active development
 - `feature/<feature-name>:` Feature branches
 
 ### 📝Code Style
+
 Follow the Flutter best practices:
+
 - Use camelCase for variable and function names
 - Follow the Dart style guide
 - Run `flutter analyze` before committing
 
 Run widget tests:
+
 ```bash
 flutter test
 ```
@@ -121,23 +130,31 @@ flutter test
 
 1. Fork the repository:
 2. Clone your forked repository:
-    ```bash
-    git clone https://github.com/<your-username>/mini_ecommerce_appln.git
-    cd mini_ecommerce_appln
-    ```
+
+   ```bash
+   git clone https://github.com/<your-username>/mini_ecommerce_appln.git
+   cd mini_ecommerce_appln
+   ```
+
 3. Create a new branch for your feature or bugfix:
-    ```bash
-    git checkout -b feature/<feature-name>
-    ```
+
+   ```bash
+   git checkout -b feature/<feature-name>
+   ```
+
 4. Make your changes and commit them:
-    ```bash
-    git add .
-    git commit -m "Add detailed description of your changes"
-    ```
+
+   ```bash
+   git add .
+   git commit -m "Add detailed description of your changes"
+   ```
+
 5. Push your changes to your forked repository:
-    ```bash
-    git push origin feature/<feature-name>
-    ```
+
+   ```bash
+   git push origin feature/<feature-name>
+   ```
+
 6. Create a pull request:
 
 ## 🐛Issues  
