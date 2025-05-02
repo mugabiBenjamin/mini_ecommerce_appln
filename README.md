@@ -120,13 +120,13 @@ Follow the Flutter best practices:
 - Follow the Dart style guide
 - Run `flutter analyze` before committing
 
+### 🧪Testing
+
 Run widget tests:
 
 ```bash
 flutter test
 ```
-
-### 🧪Testing
 
 1. Fork the repository:
 2. Clone your forked repository:
